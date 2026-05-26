@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail | Billy Ghifari</title>
+    <meta name="description" content="Detail project Billy Ghifari: judul project, teknologi, deskripsi, dan business scope.">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --panel: #141516;
+            --panel-soft: #1c1d1f;
+            --muted: rgba(255, 255, 255, 0.65);
+            --accent: #4f7cff;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #15171b 0%, #0a0a0a 50%, #050505 100%);
+            color: #f8fafc;
+        }
+
+        .navbar,
+        .nav-links a,
+        .nav-location,
+        .nav-time {
+            color: #f8fafc;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero {
+            margin: 90px 0 50px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+        }
+
+        .hero-card {
+            background: var(--panel);
+            padding: 1.6rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
+            gap: 2.5rem;
+            margin-bottom: 80px;
+        }
+
+        .panel {
+            background: var(--panel);
+            padding: 2rem;
+            border-radius: 22px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .panel h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .panel p {
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            color: #f8fafc;
+        }
+
+        .scope-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .scope-list li {
+            position: relative;
+            padding-left: 1.4rem;
+            color: var(--muted);
+        }
+
+        .scope-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #f8fafc;
+        }
+
+        .cta {
+            margin-bottom: 80px;
+            background: var(--panel-soft);
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .cta a {
+            padding: 0.8rem 1.6rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-location">East Java, Indonesia</div>
+            <div class="nav-links">
+                <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
+                <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
+                <a href="projects.html" data-aos="fade-down" data-aos-delay="300">Work</a>
+                <a href="blogs.html" data-aos="fade-down" data-aos-delay="400">Blog</a>
+            </div>
+            <div class="nav-time">05:11:30</div>
+        </nav>
+
+        <section class="hero" data-aos="fade-up">
+            <div>
+                <div class="meta">Project Detail • Technology Strategy</div>
+                <h1>Billy - Insurance Platform</h1>
+                <p>Platform risk management dan reporting untuk mempercepat keputusan bisnis serta meningkatkan compliance pada organisasi dengan operasi skala besar.</p>
+            </div>
+            <div class="hero-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Insurance platform">
+                <div class="meta">Status: Ongoing • 2026</div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="panel" data-aos="fade-up" data-aos-delay="100">
+                <h2>Judul Project</h2>
+                <p>Billy - Insurance Platform</p>
+
+                <h2>Tech</h2>
+                <div class="tag-list">
+                    <span class="tag">Product Strategy</span>
+                    <span class="tag">System Analysis</span>
+                    <span class="tag">Business Process</span>
+                    <span class="tag">Risk Governance</span>
+                </div>
+
+                <h2>Description</h2>
+                <p>Platform terintegrasi untuk memonitor risiko, mengelola kebijakan, dan menyajikan laporan real-time bagi stakeholder. Fokus utama adalah meningkatkan visibilitas data serta memastikan proses operasional berjalan konsisten.</p>
+            </div>
+
+            <aside class="panel" data-aos="fade-up" data-aos-delay="150">
+                <h2>Business Scope</h2>
+                <ul class="scope-list">
+                    <li>Audit dan pemetaan proses risiko lintas departemen.</li>
+                    <li>Standarisasi data dan pelaporan untuk pengambilan keputusan.</li>
+                    <li>Peningkatan efisiensi operasional dan compliance.</li>
+                    <li>Roadmap pengembangan fitur dan integrasi sistem.</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="cta" data-aos="fade-up">
+            <div>
+                <h2>Interested to collaborate?</h2>
+                <p style="color: var(--muted);">Let’s connect to align strategy and execution.</p>
+            </div>
+            <a href="mailto:ghifari.billy7@gmail.com">Let’s connect</a>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.querySelector('.nav-time');
+            timeElement.textContent = now.toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>

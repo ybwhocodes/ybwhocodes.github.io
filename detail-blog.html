@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Blog | Billy Ghifari</title>
+    <meta name="description" content="Detail tulisan tentang strategi teknologi, tata kelola IT, dan inovasi digital oleh Billy Ghifari.">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --panel: #141516;
+            --panel-soft: #1a1c1e;
+            --text-soft: rgba(255, 255, 255, 0.72);
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1a1b1c 0%, #0a0a0a 45%, #050505 100%);
+        }
+
+        .hero {
+            margin: 80px 0 40px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--text-soft);
+        }
+
+        .hero-card {
+            background: var(--panel);
+            border-radius: 20px;
+            padding: 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1.2rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr);
+            gap: 2.5rem;
+            margin: 50px 0 80px;
+        }
+
+        .article {
+            background: var(--panel);
+            padding: 2rem 2.2rem;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .article h2 {
+            font-size: 1.4rem;
+            margin: 2rem 0 0.8rem;
+        }
+
+        .article p {
+            color: var(--text-soft);
+            margin-bottom: 1rem;
+        }
+
+        .article ul {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+            margin: 1rem 0 1.4rem;
+            padding-left: 0;
+        }
+
+        .article ul li {
+            padding-left: 1.4rem;
+            position: relative;
+            color: var(--text-soft);
+        }
+
+        .article ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
+
+        .sidebar {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--panel-soft);
+            padding: 1.4rem;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+        }
+
+        .related {
+            margin-bottom: 60px;
+        }
+
+        .related h2 {
+            margin-bottom: 1.6rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: var(--panel);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .related-card .card-body {
+            padding: 1.2rem 1.4rem 1.5rem;
+        }
+
+        .related-card .meta {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1000px) {
+            .hero,
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-location">East Java, Indonesia</div>
+            <div class="nav-links">
+                <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
+                <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
+                <a href="projects.html" data-aos="fade-down" data-aos-delay="300">Work</a>
+                <a href="blogs.html" data-aos="fade-down" data-aos-delay="400">Blog</a>
+            </div>
+            <div class="nav-time">05:11:30</div>
+        </nav>
+
+        <section class="hero" data-aos="fade-up">
+            <div>
+                <div class="meta">Technology Strategy • 6 min read • 12 Mei 2026</div>
+                <h1>Menyusun Roadmap Digital yang Selaras dengan Tujuan Bisnis</h1>
+                <p>Roadmap teknologi bukan sekadar daftar proyek. Ia menjadi jembatan antara visi bisnis, kebutuhan operasional, dan eksekusi tim IT. Artikel ini merangkum cara membangun roadmap yang realistis, terukur, dan memberi nilai nyata.</p>
+            </div>
+            <div class="hero-card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Laptop workspace">
+                <div class="meta">Ditulis oleh Billy Ghifari</div>
+            </div>
+        </section>
+
+        <section class="content">
+            <article class="article" data-aos="fade-up" data-aos-delay="100">
+                <p>Membangun roadmap digital dimulai dari memahami konteks bisnis. Setiap inisiatif harus menjawab kebutuhan utama: meningkatkan efisiensi, memperluas pasar, atau menjaga kualitas layanan. Tanpa arah yang jelas, roadmap hanya akan menjadi kumpulan proyek tanpa dampak.</p>
+
+                <h2>1. Mulai dari masalah bisnis utama</h2>
+                <p>Identifikasi area prioritas yang ingin ditingkatkan. Gunakan data operasional, feedback pelanggan, dan evaluasi kinerja agar roadmap fokus pada outcome, bukan sekadar output.</p>
+
+                <h2>2. Bangun prioritas bersama stakeholder</h2>
+                <p>Libatkan pemilik proses dari lintas fungsi untuk menentukan urgensi, kompleksitas, dan nilai bisnis. Pendekatan ini menghindari tumpang tindih serta memperkuat komitmen eksekusi.</p>
+
+                <h2>3. Tentukan indikator keberhasilan</h2>
+                <p>Setiap inisiatif harus memiliki metrik. Contohnya: pengurangan waktu proses, peningkatan akurasi data, atau efisiensi biaya operasional.</p>
+
+                <ul>
+                    <li>Definisikan KPI yang realistis dan terukur</li>
+                    <li>Gunakan baseline sebelum proyek dimulai</li>
+                    <li>Review pencapaian secara periodik</li>
+                </ul>
+
+                <h2>4. Sinkronkan kapasitas tim dan budget</h2>
+                <p>Roadmap yang baik mempertimbangkan kapasitas tim, vendor, serta timeline yang memungkinkan. Prioritaskan proyek yang feasible tanpa mengorbankan kualitas operasional.</p>
+
+                <h2>Penutup</h2>
+                <p>Roadmap digital adalah alat untuk menyatukan strategi, tata kelola, dan eksekusi. Ketika disusun dengan baik, ia menjadi panduan yang menjaga fokus tim serta memastikan investasi teknologi memberikan nilai jangka panjang.</p>
+            </article>
+
+            <aside class="sidebar" data-aos="fade-up" data-aos-delay="150">
+                <div class="sidebar-card">
+                    <h3>Ringkasan</h3>
+                    <p>Roadmap digital harus dimulai dari problem bisnis, melibatkan stakeholder, dan memiliki metrik yang jelas agar eksekusi teknologi berdampak.</p>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Key Topics</h3>
+                    <div class="tag-list">
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Governance</span>
+                        <span class="tag">Business Alignment</span>
+                        <span class="tag">Delivery</span>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Share</h3>
+                    <p>Email: ghifari.billy7@gmail.com</p>
+                    <p>LinkedIn: r-billiyan-mulkan-ghifari</p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="related" data-aos="fade-up" data-aos-delay="200">
+            <h2>Artikel Terkait</h2>
+            <div class="related-grid">
+                <article class="related-card">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Leadership">
+                    <div class="card-body">
+                        <h3>Metrik Kinerja untuk Transformasi Digital</h3>
+                        <div class="meta">Governance • 5 min read</div>
+                    </div>
+                </article>
+                <article class="related-card">
+                    <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=800&auto=format&fit=crop" alt="Business">
+                    <div class="card-body">
+                        <h3>Menghubungkan Tim IT dan Operasional</h3>
+                        <div class="meta">Business • 4 min read</div>
+                    </div>
+                </article>
+                <article class="related-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Operations">
+                    <div class="card-body">
+                        <h3>Skema Operasional untuk Inisiatif Digital</h3>
+                        <div class="meta">Operations • 4 min read</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.querySelector('.nav-time');
+            timeElement.textContent = now.toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>

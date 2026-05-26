@@ -1,139 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design & Tech Blog</title>
+    <title>Blog | Billy Ghifari</title>
+    <meta name="description" content="Kumpulan tulisan tentang technology strategy, IT governance, dan pengembangan produk digital oleh Billy Ghifari.">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .header {
-            padding: 80px 0;
+        :root {
+            --panel: #141516;
+            --panel-soft: #1a1c1e;
+            --text-soft: rgba(255, 255, 255, 0.7);
+            --text-faint: rgba(255, 255, 255, 0.5);
+            --accent: #f5f5f5;
         }
 
-        .header h1 {
-            font-size: 48px;
-            margin-bottom: 40px;
+        body {
+            background: radial-gradient(circle at top, #1a1b1c 0%, #0a0a0a 45%, #050505 100%);
         }
 
-        .blog-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+        .page-hero {
+            margin: 80px 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .page-hero h1 {
+            font-size: 3.2rem;
+        }
+
+        .page-hero nav {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .page-hero nav a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.75;
+        }
+
+        .page-hero nav a.active {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+            gap: 2rem;
+        }
+
+        .featured-card,
+        .side-card,
+        .post-card {
+            border-radius: 20px;
             overflow: hidden;
-            margin-bottom: 30px;
-            transition: transform 0.3s;
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .blog-card:hover {
-            transform: translateY(-5px);
+        .featured-card {
+            position: relative;
+            min-height: 380px;
+            display: flex;
+            align-items: flex-end;
+            padding: 2.4rem;
+            background-size: cover;
+            background-position: center;
         }
 
-        .blog-image {
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 70%);
+            z-index: 0;
+        }
+
+        .featured-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card h2 {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .featured-meta {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+        }
+
+        .side-stack {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .side-card img,
+        .post-card img {
             width: 100%;
-            height: 300px;
+            height: 180px;
             object-fit: cover;
         }
 
-        .blog-content {
-            padding: 24px;
+        .card-body {
+            padding: 1.2rem 1.4rem 1.5rem;
         }
 
-        .blog-date {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            margin-bottom: 8px;
+        .card-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
         }
 
-        .blog-title {
-            font-size: 24px;
-            margin-bottom: 16px;
+        .card-body .meta {
+            font-size: 0.85rem;
+            color: var(--text-soft);
         }
 
-        .blog-tag {
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            font-size: 14px;
+        .section-title {
+            margin: 70px 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title h2 {
+            font-size: 1.4rem;
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .post-card h3 {
+            font-size: 1rem;
+        }
+
+        .post-card .author {
+            font-size: 0.8rem;
+            color: var(--text-faint);
+            margin-top: 0.4rem;
+        }
+
+        .discover {
+            margin: 80px 0 60px;
+            padding: 2.8rem;
+            background: var(--panel-soft);
+            border-radius: 26px;
+        }
+
+        .discover h2 {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .discover p {
+            color: var(--text-soft);
+            margin-bottom: 2rem;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
         }
 
         .newsletter {
-            background: linear-gradient(to right, #1a1a1a, #2a2a2a);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
+            margin: 80px 0 60px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 2rem;
+            align-items: center;
         }
 
-        .newsletter h2 {
-            font-size: 32px;
-            margin-bottom: 16px;
+        .newsletter h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
         }
 
         .newsletter p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 24px;
+            color: var(--text-soft);
         }
 
         .newsletter-form {
             display: flex;
-            gap: 16px;
-            max-width: 500px;
-            margin: 0 auto;
+            gap: 1rem;
         }
 
-        .newsletter-input {
+        .newsletter-form input {
             flex: 1;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            border-radius: 999px;
             border: none;
-            background: rgba(255, 255, 255, 0.1);
+            background: #1c1f21;
             color: #fff;
         }
 
-        .newsletter-button {
-            padding: 12px 24px;
-            border-radius: 8px;
+        .newsletter-form button {
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
             border: none;
             background: #fff;
             color: #000;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
-            transition: opacity 0.3s;
         }
 
-        .newsletter-button:hover {
-            opacity: 0.9;
-        }
-
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px 0;
+        .page-footer {
+            padding: 40px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            gap: 2rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 20px;
+        .footer-links {
+            display: grid;
+            gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
-        .social-links a {
+        .footer-links a {
+            color: var(--text-soft);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
             color: #fff;
-            opacity: 0.7;
-            transition: opacity 0.3s;
         }
 
-        .social-links a:hover {
-            opacity: 1;
+        @media (max-width: 1100px) {
+            .post-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .discover-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .page-hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter {
+                grid-template-columns: 1fr;
+            }
+
+            .page-footer {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .post-grid,
+            .discover-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .page-hero h1 {
+                font-size: 2.4rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <nav class="navbar">
-            <div class="nav-location">Asia/Jakarta</div>
+            <div class="nav-location">East Java, Indonesia</div>
             <div class="nav-links">
                 <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
                 <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
@@ -143,52 +310,165 @@
             <div class="nav-time">05:11:30</div>
         </nav>
 
-        <header class="header">
-            <h1 data-aos="fade-up">Writing about design and tech...</h1>
+        <header class="page-hero" data-aos="fade-up">
+            <h1>Blog</h1>
+            <nav>
+                <a class="active" href="blogs.html">Home</a>
+                <a href="detail-blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Pages</a>
+            </nav>
         </header>
 
-        <main>
-            <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" alt="Northern Lights" class="blog-image">
-                <div class="blog-content">
-                    <div class="blog-date">April 8, 2024</div>
-                    <h2 class="blog-title">Arriving to a new milestone in my career</h2>
-                    <span class="blog-tag">Journal</span>
+        <section class="hero-grid">
+            <article class="featured-card" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop');" data-aos="fade-up">
+                <div class="featured-card-content">
+                    <span class="pill">Technology Strategy</span>
+                    <h2>Menyusun Roadmap Digital yang Selaras dengan Tujuan Bisnis</h2>
+                    <div class="featured-meta">Strategi • 5 min read</div>
                 </div>
             </article>
+            <div class="side-stack">
+                <article class="side-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop" alt="Team discussion">
+                    <div class="card-body">
+                        <h3>Hidden Cost dari Scaling Infrastruktur Terlalu Cepat</h3>
+                        <div class="meta">Governance • 4 min read</div>
+                    </div>
+                </article>
+                <article class="side-card" data-aos="fade-up" data-aos-delay="250">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Product strategy">
+                    <div class="card-body">
+                        <h3>AI dan Dampaknya pada Kolaborasi Tim Digital</h3>
+                        <div class="meta">Innovation • 3 min read</div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-            <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="blog-content">
-                    <div class="blog-date">March 5, 2024</div>
-                    <h2 class="blog-title">The 99% that remains in the drawer</h2>
-                    <span class="blog-tag">Journal</span>
+        <section class="section-title">
+            <h2>Previous Posts</h2>
+        </section>
+        <section class="post-grid">
+            <article class="post-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=800&auto=format&fit=crop" alt="Business meeting">
+                <div class="card-body">
+                    <h3>Menghubungkan Tim IT dan Operasional</h3>
+                    <div class="meta">Business • 4 min read</div>
+                    <div class="author">By Billy Ghifari</div>
                 </div>
             </article>
-
-            <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="blog-content">
-                    <div class="blog-date">March 5, 2024</div>
-                    <h2 class="blog-title">The rise of design engineering</h2>
-                    <span class="blog-tag">Technology</span>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Leadership">
+                <div class="card-body">
+                    <h3>Metrik Kinerja untuk Transformasi Digital</h3>
+                    <div class="meta">Governance • 5 min read</div>
+                    <div class="author">By Billy Ghifari</div>
                 </div>
             </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=800&auto=format&fit=crop" alt="Strategy">
+                <div class="card-body">
+                    <h3>Membuat Prioritas Produk yang Terukur</h3>
+                    <div class="meta">Strategy • 6 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="250">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="Governance">
+                <div class="card-body">
+                    <h3>Standar Tata Kelola IT untuk Skala Menengah</h3>
+                    <div class="meta">IT Governance • 4 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Analytics">
+                <div class="card-body">
+                    <h3>Menata Pipeline Data untuk Keputusan Bisnis</h3>
+                    <div class="meta">Data • 5 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="350">
+                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=800&auto=format&fit=crop" alt="Architecture">
+                <div class="card-body">
+                    <h3>Menyelaraskan Arsitektur Sistem dengan Target Bisnis</h3>
+                    <div class="meta">Architecture • 6 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Operations">
+                <div class="card-body">
+                    <h3>Skema Operasional untuk Inisiatif Digital</h3>
+                    <div class="meta">Operations • 4 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+            <article class="post-card" data-aos="fade-up" data-aos-delay="450">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Engineering">
+                <div class="card-body">
+                    <h3>Menjaga Kualitas Sistem di Tengah Perubahan</h3>
+                    <div class="meta">Engineering • 5 min read</div>
+                    <div class="author">By Billy Ghifari</div>
+                </div>
+            </article>
+        </section>
 
-            <section class="newsletter" data-aos="fade-up">
-                <h2>Subscribe to Billy's Newsletter</h2>
-                <p>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Email" class="newsletter-input">
-                    <button type="submit" class="newsletter-button">Sign up</button>
-                </form>
-            </section>
-        </main>
+        <section class="discover" data-aos="fade-up">
+            <h2>Discover more stories</h2>
+            <p>Insight tentang business alignment, teknologi, dan pertumbuhan organisasi digital.</p>
+            <div class="discover-grid">
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="Strategy review">
+                    <div class="card-body">
+                        <h3>Risiko Strategis saat Transformasi Skala Besar</h3>
+                        <div class="meta">By Billy Ghifari</div>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=800&auto=format&fit=crop" alt="Teamwork">
+                    <div class="card-body">
+                        <h3>Membangun Budaya Data di Tim Bisnis</h3>
+                        <div class="meta">By Billy Ghifari</div>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" alt="Meeting">
+                    <div class="card-body">
+                        <h3>Evaluasi Vendor Teknologi dengan Kerangka Governance</h3>
+                        <div class="meta">By Billy Ghifari</div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        <footer>
-            <div>© 2024 / R. Billiyan Mulkan Ghifari / Build your portfolio with Once UI</div>
-            <div class="social-links">
-                <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+        <section class="newsletter" data-aos="fade-up">
+            <div>
+                <h3>Jangan lewatkan update</h3>
+                <p>Tulisan singkat seputar strategi teknologi, governance, dan pengalaman membangun sistem.</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Masukkan email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <footer class="page-footer">
+            <div>
+                <div>© 2026 / R. Billiyan Mulkan Ghifari</div>
+                <div style="color: var(--text-faint); margin-top: 8px;">Technology Strategy &amp; Innovation</div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Work</a>
+                <a href="detail-blog.html">Blog Detail</a>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:ghifari.billy7@gmail.com">ghifari.billy7@gmail.com</a>
+                <a href="https://www.linkedin.com/in/r-billiyan-mulkan-ghifari/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </footer>
     </div>
@@ -200,11 +480,10 @@
             once: true
         });
 
-        // Update time
         function updateTime() {
             const now = new Date();
             const timeElement = document.querySelector('.nav-time');
-            timeElement.textContent = now.toLocaleTimeString('en-US', { 
+            timeElement.textContent = now.toLocaleTimeString('en-US', {
                 hour12: false,
                 hour: '2-digit',
                 minute: '2-digit',
@@ -216,4 +495,5 @@
         updateTime();
     </script>
 </body>
+
 </html>

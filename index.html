@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Engineer and Builder</title>
+    <title>Billy Ghifari | Technology Strategy &amp; Innovation</title>
+    <meta name="description" content="Portfolio R. Billiyan Mulkan Ghifari (Billy) - technology strategy and innovation, IT manager, business development and governance, software engineering.">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -16,25 +17,152 @@
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            margin: 100px 0px 150px 0pxß;
-            /* This ensures that both children of the container stretch to take up equal height */
+            gap: 3rem;
+            margin: 100px 0 150px;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 1.2rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            font-size: 3.4rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             opacity: 0.8;
             max-width: 850px;
         }
 
-        .show-case {
-          margin-top: 150px;
-          padding: 2rem 0;
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .section {
+            margin-top: 140px;
+            padding: 2rem 0;
+        }
+
+        .section-heading h2 {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-heading p {
+            opacity: 0.75;
+            max-width: 720px;
+        }
+
+        .card {
+            background: #151515;
+            border-radius: 16px;
+            padding: 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card p {
+            opacity: 0.75;
+        }
+
+        .focus-grid,
+        .experience-grid,
+        .credentials-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .focus-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .experience-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .experience-item .role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .experience-item .company {
+            opacity: 0.85;
+        }
+
+        .experience-item .period {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin-top: 0.4rem;
+        }
+
+        .credentials-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .simple-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .list-title {
+            font-weight: 600;
+        }
+
+        .list-meta {
+            opacity: 0.65;
+            font-size: 0.9rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        .section-subtitle {
+            margin-top: 1.6rem;
+            font-size: 1.1rem;
         }
 
         .project-card {
@@ -45,24 +173,6 @@
             max-width: 1200px;
         }
 
-        .project-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-        }
-
         .cta-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -70,59 +180,104 @@
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            transition: background 0.3s;
+            transition: background 0.3s, border 0.3s, color 0.3s;
         }
 
         .cta-button:hover {
             background: #2952cc;
         }
 
-        .newsletter {
+        .cta-button--ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button--ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .contact {
             background: #151515;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
+            padding: 3.8rem 3rem;
+            border-radius: 20px;
+            margin-top: 140px;
         }
 
-        .newsletter h2 {
-            margin-bottom: 1rem;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.2rem;
         }
 
-        .newsletter p {
-            opacity: 0.8;
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
+        .contact-item {
+            background: #111111;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.3rem 1.6rem;
             display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            opacity: 0.6;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 6px;
-            background: #252525;
-            color: white;
-            font-family: inherit;
+        @media (max-width: 900px) {
+            .hero-3d {
+                flex-direction: column;
+                margin: 70px 0 90px;
+            }
+
+            .hero,
+            .house {
+                width: 100%;
+                padding: 0;
+            }
+
+            .house {
+                width: 70vw;
+                height: 70vw;
+                margin: 0 auto;
+            }
+
+            .section {
+                margin-top: 100px;
+            }
+
+            .focus-grid,
+            .experience-grid,
+            .credentials-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .newsletter-form button {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            background: #3366ff;
-            color: white;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.3s;
-        }
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
 
-        .newsletter-form button:hover {
-            background: #2952cc;
+            .contact {
+                padding: 2.6rem 1.6rem;
+            }
         }
 
         footer {
@@ -137,7 +292,7 @@
 <body>
     <div class="container">
         <nav class="navbar" style="margin-bottom: 150px;">
-            <div class="nav-location">Asia/Jakarta</div>
+            <div class="nav-location">East Java, Indonesia</div>
             <div class="nav-links">
                 <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
                 <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
@@ -149,11 +304,22 @@
 
         <section class="hero-3d">
             <div class="hero">
-                <h1 data-aos="fade-up">Software engineer</h1>
-                <p data-aos="fade-up" data-aos-delay="100">
-                    I'm Billy, a design engineer where I craft intuitive user experiences.
-                    After hours, I build my own projects.
+                <div class="hero-eyebrow" data-aos="fade-up">IT Manager | Business Development &amp; Governance | Software Engineering</div>
+                <h1 data-aos="fade-up" data-aos-delay="100">Technology Strategy &amp; Innovation</h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    Saya Billy, technology professional dengan latar belakang software engineering, business analysis, dan IT
+                    management. Saya membantu menghubungkan strategi teknologi, tata kelola, dan kebutuhan bisnis agar
+                    inisiatif digital dapat berjalan lebih terarah, andal, dan bernilai.
                 </p>
+                <div class="hero-meta" data-aos="fade-up" data-aos-delay="300">
+                    <span>East Java, Indonesia</span>
+                    <span>Asia/Jakarta</span>
+                    <span>ghifari.billy7@gmail.com</span>
+                </div>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+                    <a class="cta-button" href="mailto:ghifari.billy7@gmail.com">Hubungi Saya</a>
+                    <a class="cta-button cta-button--ghost" href="https://www.linkedin.com/in/r-billiyan-mulkan-ghifari/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
             </div>
             <div class="house" id="h">
                 <div class="h-lights">
@@ -518,68 +684,158 @@
                 </div>
             </div>
         </section>
-        <section class="show-case">
-            <h2>Features Post</h2>
-            <div class="grid grid-cols-1 gap-8 px-4 md:px-6">
-              <!-- Main featured post -->
-              <div class="relative group" data-aos="fade-up">
-                <div class="grid lg:grid-cols-[2fr,1fr] gap-8">
-                  <div class="space-y-8">
-                    <!-- Side post 1 -->
-                    <div class="flex gap-4 items-start">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
-                        alt="Blog post" 
-                        class="w-32 aspect-[4/3] object-cover rounded-lg bg-gray-800"
-                      />
-                      <div>
-                        <p class="text-sm text-gray-400">Maret 27, 2022</p>
-                        <h3 class="font-medium mt-1">Mungkin yang kamu butuhkan saat ini bukan lagi latihan tapi terjun ke Industri</h3>
-                      </div>
-                    </div>
-                    <!-- Side post 2 -->
-                    <div class="flex gap-4 items-start">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
-                        alt="Blog post" 
-                        class="w-32 aspect-[4/3] object-cover rounded-lg bg-gray-800"
-                      />
-                      <div>
-                        <p class="text-sm text-gray-400">Februari 15, 2022</p>
-                        <h3 class="font-medium mt-1">Proses membuat layout dan komposisi pada UI Design</h3>
-                      </div>
-                    </div>
-                    <!-- Side post 3 -->
-                    <div class="flex gap-4 items-start">
-                      <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" 
-                        alt="Blog post" 
-                        class="w-32 aspect-[4/3] object-cover rounded-lg bg-gray-800"
-                      />
-                      <div>
-                        <p class="text-sm text-gray-400">Agustus 11, 2021</p>
-                        <h3 class="font-medium mt-1">Apakah menggunakan Grid akan membatasi kreativitas UI Designer?</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section class="section focus" id="focus">
+            <div class="section-heading">
+                <h2 data-aos="fade-up">Fokus Utama</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Menghubungkan strategi teknologi dengan kebutuhan bisnis melalui tata kelola yang solid, kolaborasi lintas fungsi, dan eksekusi sistem yang terukur.</p>
             </div>
-          </section>
+            <div class="focus-grid">
+                <article class="card" data-aos="fade-up" data-aos-delay="150">
+                    <h3>Technology Strategy &amp; Innovation</h3>
+                    <p>Menyusun arah inisiatif digital, mengevaluasi peluang inovasi, dan memastikan roadmap teknologi selaras dengan target bisnis.</p>
+                </article>
+                <article class="card" data-aos="fade-up" data-aos-delay="250">
+                    <h3>IT Governance &amp; Reliability</h3>
+                    <p>Membangun tata kelola, standar, dan kontrol untuk memastikan sistem aman, andal, dan mendukung keberlanjutan operasional.</p>
+                </article>
+                <article class="card" data-aos="fade-up" data-aos-delay="350">
+                    <h3>Business Development &amp; Alignment</h3>
+                    <p>Menjembatani kebutuhan bisnis dengan solusi teknologi melalui analisis proses, kolaborasi lintas departemen, dan eksekusi yang jelas.</p>
+                </article>
+                <article class="card" data-aos="fade-up" data-aos-delay="450">
+                    <h3>Software Engineering &amp; System Analysis</h3>
+                    <p>Pengalaman membangun aplikasi web dan mobile, analisis kebutuhan, serta desain solusi yang scalable dan maintainable.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section experience" id="experience">
+            <div class="section-heading">
+                <h2 data-aos="fade-up">Ringkasan Pengalaman</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Perjalanan karier di software engineering, business analysis, hingga technology leadership dan business development.</p>
+            </div>
+            <div class="experience-grid">
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="role">Business Development Manager</div>
+                    <div class="company">Dasarata, PT. Garuda Lintas Cakrawala</div>
+                    <div class="period">Feb 2026 - Present</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="role">Information Technology Manager</div>
+                    <div class="company">Dasarata, PT. Garuda Lintas Cakrawala</div>
+                    <div class="period">Feb 2026 - Present</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="role">Business Analyst</div>
+                    <div class="company">Dasarata, PT. Garuda Lintas Cakrawala</div>
+                    <div class="period">Aug 2025 - Mar 2026</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="role">Software Engineer</div>
+                    <div class="company">Dinta Indonesia</div>
+                    <div class="period">Jul 2022 - Feb 2025</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="350">
+                    <div class="role">Web Developer</div>
+                    <div class="company">PT. Netsindo Sentra Computama</div>
+                    <div class="period">Jan 2022 - Jun 2022</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="role">Front-end Web Developer</div>
+                    <div class="company">Namatech</div>
+                    <div class="period">Jul 2021 - Dec 2021</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="450">
+                    <div class="role">Android Developer</div>
+                    <div class="company">Illiyin Studio</div>
+                    <div class="period">Apr 2021 - May 2021</div>
+                </article>
+                <article class="card experience-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="role">Web Developer</div>
+                    <div class="company">Kementerian Agama Kantor Kota Malang</div>
+                    <div class="period">Feb 2021 - Apr 2021</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section credentials" id="credentials">
+            <div class="section-heading">
+                <h2 data-aos="fade-up">Pendidikan &amp; Penghargaan</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Latar pendidikan, kompetensi utama, dan penghargaan yang membentuk fondasi profesional.</p>
+            </div>
+            <div class="credentials-grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="150">
+                    <h3>Pendidikan</h3>
+                    <ul class="simple-list">
+                        <li>
+                            <span class="list-title">Magister Komputer, Ilmu Komputer</span>
+                            <span class="list-meta">Universitas Brawijaya • Aug 2023 - Jul 2025</span>
+                        </li>
+                        <li>
+                            <span class="list-title">Teknik Informatika</span>
+                            <span class="list-meta">Universitas Islam Negeri Maulana Malik Ibrahim • Aug 2018 - Feb 2022</span>
+                        </li>
+                        <li>
+                            <span class="list-title">MIPA</span>
+                            <span class="list-meta">SMAN 2 Kota Probolinggo • 2014 - 2017</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="250">
+                    <h3>Top Skills</h3>
+                    <div class="tag-list">
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Project Management Body of Knowledge (PMBOK)</span>
+                        <span class="tag">Software System Analysis</span>
+                    </div>
+                    <h3 class="section-subtitle">Honors &amp; Awards</h3>
+                    <ul class="simple-list">
+                        <li>
+                            <span class="list-title">Top 6 Duta Pangan 2018 Kota Malang</span>
+                        </li>
+                        <li>
+                            <span class="list-title">Winner 1 Summer Program UIN Malang 2019</span>
+                        </li>
+                        <li>
+                            <span class="list-title">Mahasiswa Teladan PKPBA Semester 1 2018</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
           
 
-        <section class="newsletter" data-aos="fade-up">
-            <h2>Subscribe to Billy's Newsletter</h2>
-            <p>I occasionally write about design, technology, and share thoughts on the intersection of creativity and
-                engineering.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Email address">
-                <button type="submit">Sign up</button>
-            </form>
+        <section class="contact" id="contact" data-aos="fade-up">
+            <div class="section-heading">
+                <h2>Mari Terhubung</h2>
+                <p>Terbuka untuk diskusi strategi teknologi, tata kelola IT, dan kolaborasi lintas bisnis yang berdampak.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:ghifari.billy7@gmail.com">ghifari.billy7@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+6281249194476">+62 812-4919-4476</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/r-billiyan-mulkan-ghifari/" target="_blank" rel="noopener">linkedin.com/in/r-billiyan-mulkan-ghifari</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Location</span>
+                    <span>East Java, Indonesia (Asia/Jakarta)</span>
+                </div>
+            </div>
+            <div class="contact-actions">
+                <a class="cta-button" href="mailto:ghifari.billy7@gmail.com">Kirim Email</a>
+                <a class="cta-button cta-button--ghost" href="https://www.linkedin.com/in/r-billiyan-mulkan-ghifari/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
         </section>
     </div>
     <footer>
-        © 2024 / R. Billiyan Mulkan Ghifari / Built your portfolio with Once UI
+        © 2026 / R. Billiyan Mulkan Ghifari / Technology Strategy &amp; Innovation
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

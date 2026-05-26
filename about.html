@@ -1,218 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Portfolio</title>
+    <title>About Billy | Technology Strategy &amp; Innovation</title>
+    <meta name="description" content="Profil dan perjalanan profesional R. Billiyan Mulkan Ghifari (Billy) - technology strategy, IT management, business development, dan software engineering.">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .location {
-            font-size: 0.9rem;
-            color: #888;
+        .page-header {
+            margin: 90px 0 70px;
         }
 
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            /* Menggunakan flexbox */
-            flex-direction: column;
-            /* Mengatur arah child elements menjadi vertikal */
-            justify-content: center;
-            /* Menengahkan konten secara vertikal */
-            height: 100%;
-            width: 250px;
-            /* height: 100vh; */
-            position: fixed;
-            padding: 40px 20px;
-            background-color: #0a0a0a;
-            border-right: 1px solid #222;
+        .page-header h1 {
+            font-size: 3.1rem;
+            margin-bottom: 1rem;
         }
 
-        .sidebar-section {
-            margin-bottom: 30px;
+        .page-header p {
+            max-width: 780px;
+            opacity: 0.8;
+            font-size: 1.05rem;
         }
 
-        .sidebar-section h3 {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+        .about-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
         }
 
-        .sidebar-section p {
-            font-size: 0.9rem;
-            margin: 5px 0;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 250px;
-            padding: 50px 40px 40px;
-            flex: 1;
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            margin-bottom: 40px;
+        .profile-card {
+            background: #151515;
+            border-radius: 18px;
+            padding: 2.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
+            width: 100%;
+            max-width: 280px;
+            border-radius: 24px;
             object-fit: cover;
+            margin-bottom: 1.8rem;
         }
 
-        .profile-info h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        .profile-name {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
         }
 
-        .profile-info h2 {
-            font-size: 1.5rem;
-            color: #888;
-            margin-bottom: 20px;
+        .profile-role {
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
         }
 
-        .social-links {
+        .profile-meta {
+            display: grid;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .profile-meta span {
+            opacity: 0.75;
+        }
+
+        .cta-group {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.8rem;
         }
 
-        .social-links a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            background-color: #1a1a1a;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .schedule-call {
+        .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 8px 20px;
-            background-color: #1a1a1a;
-            border: 1px solid #4CAF50;
-            color: #4CAF50;
-            border-radius: 5px;
+            justify-content: center;
+            padding: 0.8rem 1.4rem;
+            background: #3366ff;
+            color: #fff;
             text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s, border 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #2952cc;
+        }
+
+        .cta-button--ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button--ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            opacity: 0.78;
+        }
+
+        .detail-grid {
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .detail-card {
+            background: #151515;
+            border-radius: 16px;
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .detail-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .detail-card .meta {
+            opacity: 0.6;
             font-size: 0.9rem;
         }
 
-        .work-section {
-            margin: 60px 0;
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
         }
 
-        .work-item {
-            margin-bottom: 40px;
+        .tag {
+            padding: 0.35rem 0.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            font-size: 0.85rem;
         }
 
-        .work-item h3 {
-            color: #4CAF50;
-            margin-bottom: 5px;
-        }
-
-        .work-period {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .work-description {
-            margin-bottom: 20px;
-        }
-
-
-        .work-image {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .icons .icon {
-            display: inline-block;
-            position: relative;
-            width: 50px;
-            height: 50px;
-            margin: 20px;
-            cursor: pointer;
-        }
-
-        .icons .icon i {
-            font-size: 50px;
-            color: #fff;
-            /* Default color, change as needed */
-        }
-
-        .icons .icon span {
-            display: none;
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 5px;
-            color: #fff;
-            background-color: #333;
-            border-radius: 3px;
-            font-size: 12px;
-            white-space: nowrap;
-        }
-
-        .icons .icon:hover span {
-            display: block;
-        }
-
-        @media (max-width: 1024px) {
-            .top-nav {
-                left: 0;
+        @media (max-width: 980px) {
+            .about-layout {
+                grid-template-columns: 1fr;
             }
 
-            .sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
+            .profile-card {
+                text-align: center;
             }
 
-            .main-content {
-                margin-left: 0;
+            .profile-image {
+                margin: 0 auto 1.8rem;
             }
 
-            .profile-header {
-                flex-direction: column;
+            .cta-group {
+                justify-content: center;
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 2.4rem;
             }
 
-            .profile-info h1 {
-                font-size: 2.5rem;
-            }
-
-            .social-links {
-                flex-wrap: wrap;
+            .profile-card {
+                padding: 1.8rem;
             }
         }
     </style>
 </head>
-//test
+
 <body>
     <div class="container">
         <nav class="navbar">
-            <div class="nav-location">Asia/Jakarta</div>
+            <div class="nav-location">East Java, Indonesia</div>
             <div class="nav-links">
                 <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
                 <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
@@ -222,182 +191,99 @@
             <div class="nav-time">05:11:30</div>
         </nav>
 
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3>Introduction</h3>
-            </div>
+        <header class="page-header" data-aos="fade-up">
+            <h1>Tentang Billy</h1>
+            <p>Billy adalah technology professional dengan latar belakang software engineering, business analysis, dan technology management. Ia berfokus pada penyelarasan strategi teknologi, tata kelola, dan kebutuhan bisnis agar inisiatif digital berjalan lebih terarah dan bernilai.</p>
+        </header>
 
-            <div class="sidebar-section">
-                <h3>Work Experience</h3>
-                <p>FLY</p>
-                <p>Creativ3</p>
-            </div>
+        <section class="about-layout">
+            <aside class="profile-card" data-aos="fade-up">
+                <img src="img/about/1.jpg" alt="R. Billiyan Mulkan Ghifari" class="profile-image">
+                <div class="profile-name">R. Billiyan Mulkan Ghifari</div>
+                <div class="profile-role">Technology Strategy &amp; Innovation | IT Manager | Business Development &amp; Governance</div>
+                <div class="profile-meta">
+                    <span>Nama tampil: Billy</span>
+                    <span>Lokasi: East Java, Indonesia</span>
+                    <span>Zona waktu: Asia/Jakarta</span>
+                    <span>Email: ghifari.billy7@gmail.com</span>
+                    <span>Telepon: +62 812-4919-4476</span>
+                </div>
+                <div class="cta-group">
+                    <a class="cta-button" href="mailto:ghifari.billy7@gmail.com">Hubungi Saya</a>
+                    <a class="cta-button cta-button--ghost" href="https://www.linkedin.com/in/r-billiyan-mulkan-ghifari/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </aside>
 
-            <div class="sidebar-section">
-                <h3>Studies</h3>
-                <p>University of Jakarta</p>
-                <p>Build the Future</p>
-            </div>
+            <div>
+                <section class="content-section" data-aos="fade-up" data-aos-delay="100">
+                    <h2>Ringkasan Profil</h2>
+                    <p>Billy berpengalaman menghubungkan strategi teknologi dengan tujuan bisnis melalui pengembangan sistem, analisis kebutuhan, tata kelola IT, dan kolaborasi lintas departemen. Ia membawa perspektif software engineering untuk memastikan solusi digital berjalan reliable, efisien, dan siap scale.</p>
+                </section>
 
-            <div class="sidebar-section">
-                <h3>Technical skills</h3>
-                <p>Figma</p>
-                <p>Next.js</p>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <section class="profile-header" data-aos="fade-up">
-                <div class="profile-info">
-                    <h1>R. Billiyan Mulkan Ghifari</h1>
-                    <h2>Software Engineer</h2>
-                    <div class="social-links">
-                        <a href="#github">GitHub</a>
-                        <a href="#linkedin">LinkedIn</a>
-                        <a href="#email">Email</a>
+                <section class="content-section" data-aos="fade-up" data-aos-delay="150">
+                    <h2>Fokus Profesional</h2>
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h3>Technology Strategy &amp; Innovation</h3>
+                            <p>Merancang arah inovasi dan roadmap teknologi agar inisiatif digital selaras dengan kebutuhan bisnis.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h3>IT Governance &amp; Business Alignment</h3>
+                            <p>Menjaga kualitas tata kelola, risiko, serta kolaborasi antar tim agar sistem tetap andal dan terukur.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h3>System Analysis &amp; Delivery</h3>
+                            <p>Menterjemahkan kebutuhan bisnis menjadi spesifikasi teknis serta memastikan eksekusi berjalan tepat sasaran.</p>
+                        </div>
                     </div>
-                </div>
-                <img src="img/about/1.jpg" alt="Profile" class="profile-image">
-            </section>
-            <section>
-                <p>An experienced Software Engineer with a 3-year track record in web and Android development, currently
-                    pursuing a master's degree at Universitas Brawijaya. Simultaneously, I am a quick learner and highly
-                    adaptable, driving innovation in the technology field by combining expertise with ongoing education
-                    to deliver impactful and optimal results.</p>
-            </section>
+                </section>
 
-            <section class="work-section" data-aos="fade-up">
-                <h2>Work Experience</h2>
+                <section class="content-section" data-aos="fade-up" data-aos-delay="200">
+                    <h2>Pengalaman Kunci</h2>
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h3>Business Development Manager</h3>
+                            <div class="meta">Dasarata, PT. Garuda Lintas Cakrawala • Feb 2026 - Present</div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>Information Technology Manager</h3>
+                            <div class="meta">Dasarata, PT. Garuda Lintas Cakrawala • Feb 2026 - Present</div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>Business Analyst</h3>
+                            <div class="meta">Dasarata, PT. Garuda Lintas Cakrawala • Aug 2025 - Mar 2026</div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>Software Engineer</h3>
+                            <div class="meta">Dinta Indonesia • Jul 2022 - Feb 2025</div>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="work-item">
-                    <h3>Dinta Indonesia</h3>
-                    <div class="work-period">Software Engginer • Jul 2022 - Nov - 2024</div>
-                    <ul class="work-description">
-                        <li>Collaborated with the development team to create applications tailored to both company
-                            product requirements and client requests.</li>
-                        <li>Developed web-based systems using PHP for the backend, leveraging Laravel and CodeIgniter
-                            frameworks, and utilized JavaScript with the Vue.js framework for the frontend. The database
-                            management system employed was MySQL.</li>
-                    </ul>
-                </div>
-
-                <div class="work-item">
-                    <h3>PT Netsindo Sentra Computama</h3>
-                    <div class="work-period">Web developer • Mar 2022 - Jun 2022 </div>
-                    <ul class="work-description">
-                        <li>Collaborated with the development team to create applications that meet company product
-                            requirements and client requests. Developed web-based ERP applications for laboratory
-                            systems using PHP with the CodeIgniter framework and MySQL.</li>
-                    </ul>
-                </div>
-                <div class="work-item">
-                    <h3>Namatech</h3>
-                    <div class="work-period">Front-End Developer • Mar 2022 - Jun 2022 </div>
-                    <ul class="work-description">
-                        <li>Collaborate with the development team to develop applications that will become company
-                            products or client requests. Developing the interface of the kkuljaem learning website using
-                            PHP with the Laravel framework.</li>
-                    </ul>
-                </div>
-                <div class="work-item">
-                    <h3>Illiyin Studio</h3>
-                    <div class="work-period">Android Developer • Apr 2022 - May 2022 </div>
-                    <ul class="work-description">
-                        <li>Develop the appearance of a mobile-based application and collaborate with the back-end web
-                            developer team so that the application can run well.</li>
-                    </ul>
-                </div>
-                <div class="work-item">
-                    <h3>Informatics Engineering Study Program, UIN Malang</h3>
-                    <div class="work-period">Laboratory Assistant 2019 - May 2021 </div>
-                    <ul class="work-description">
-                        <li>Data structure ( 2019 )</li>
-                        <li>Digital electronics ( 2019 )</li>
-                        <li>Computer network ( 2020 )</li>
-                        <li>Distributed systems and networks ( 2021 )</li>
-                        <li>Mobile Programming ( 2021 )</li>
-                    </ul>
-                </div>
-                <div class="work-item">
-                    <h3>Informatics Engineering Study Program, UIN Malang</h3>
-                    <div class="work-period">Laboratory Assistant 2019 - May 2021 </div>
-                    <ul class="work-description">
-                        <li>Data structure ( 2019 )</li>
-                        <li>Digital electronics ( 2019 )</li>
-                        <li>Computer network ( 2020 )</li>
-                        <li>Distributed systems and networks ( 2021 )</li>
-                        <li>Mobile Programming ( 2021 )</li>
-                    </ul>
-                </div>
-                <div class="work-item">
-                    <h3>The Ministry of Religious Affairs, Malang City Office - Internship</h3>
-                    <div class="work-period">Web Developer Feb 2021 - Apr 2021 </div>
-                    <ul class="work-description">
-                        <li>Collaborate with the development team to build applications that will serve as institutional
-                            products. Develop the online legalization web app (Lego) and the information system for
-                            Majelis Ta'lim (Sijimat) using PHP with the CodeIgniter framework.</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="work-section" data-aos="fade-up">
-                <h2>Studies</h2>
-
-                <div class="work-item">
-                    <h3>Universitas Brawijaya 2023 - Present</h3>
-                    <div class="work-period">Master of Computer Science </div>
-                    <p>Experience: Presenter at the International Conference on Sustainable Information Engineering and
-                        Technology (SIET) 2024.</p>
-
-                </div>
-
-                <div class="work-item">
-                    <h3>UIN Maulana Malik Ibrahim Malang 2018 - 2022 </h3>
-                    <div class="work-period">Bachelor of Computer Science</div>
-                    <ul class="work-description">
-                        <li>Awards: First Place Winner in the Summer Program 2020 of UIN Malang in collaboration with
-                            USIM Malaysia.</li>
-                        <li>Experience: Facilitator for the 2021 Summer Program of UIN Malang in collaboration with UTM
-                            Malaysia.</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="work-section" data-aos="fade-up">
-                <h2>Technical skills</h2>
-                <div class="icons">
-                    <div class="icon"><i class="fab fa-php"></i><span>PHP</span></div>
-                    <div class="icon"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-                    <div class="icon"><i class="fas fa-database"></i><span>SQL</span></div>
-                    <div class="icon"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                    <div class="icon"><i class="fab fa-vuejs"></i><span>VueJS</span></div>
-                    <div class="icon"><i class="fab"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" viewBox="0 0 50 63">
-                        <g clip-path="url(#a)">
-                          <path fill-opacity=".278" fill-rule="evenodd" d="M15.211 15.071-.078 30.074l4.811 4.671 4.811 4.671L29.512 19.71 49.482 0l-9.49.035L30.5.07 15.211 15.071Zm7.327 21.375-7.915 7.85 5.938 6.187c10.473 10.909 9.975 10.65 20.561 10.65h9.334l-8.455-8.38-8.455-8.38 7.953-7.89 7.954-7.888h-19l-7.915 7.85Z" clip-rule="evenodd"/>
-                          <path fill-opacity=".614" fill-rule="evenodd" d="m28.204 49.59-4.213 4.232 3.797 3.656 3.796 3.656h17.869L41.5 53.245c-4.374-4.338-8.207-7.888-8.518-7.888-.311 0-2.461 1.905-4.778 4.233Z" clip-rule="evenodd"/>
-                        </g>
-                        <defs>
-                          <clipPath id="a">
-                            <path d="M0 0h50v62.12H0z"/>
-                          </clipPath>
-                        </defs>
-                      </svg></i>
-                      
-                      <span>Flutter</span></div>
-                    <div class="icon"><i class="fab fa-java"></i><span>Java</span></div>
-                    <div class="icon"><i class="fab"></i><svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" viewBox="0 0 50 50">
-                        <path fill-opacity=".478" fill-rule="evenodd" d="M0 24.916v24.916h49.997L37.625 37.456C30.82 30.65 25.253 24.977 25.253 24.851c0-.127 5.567-5.769 12.373-12.538L50 .005 25 .002 0 0v24.916Z" clip-rule="evenodd"/>
-                      </svg>
-                      <span>Kotlin</span></div>
-                    <div class="icon"><i class="fab fa-html5"></i><span>HTML</span></div>
-                    <div class="icon"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-                    <div class="icon"><i class="fab fa-python"></i><span>Python</span></div>
-                    <div class="icon"><i class="fab fa-figma"></i><span>Figma</span></div>
-                    <div class="icon"><i class="fas fa-project-diagram"></i><span>UML</span></div>
-                </div>
-
-            </section>
-        </main>
+                <section class="content-section" data-aos="fade-up" data-aos-delay="250">
+                    <h2>Pendidikan &amp; Penghargaan</h2>
+                    <div class="detail-grid">
+                        <div class="detail-card">
+                            <h3>Universitas Brawijaya</h3>
+                            <div class="meta">Magister Komputer, Ilmu Komputer • Aug 2023 - Jul 2025</div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>Universitas Islam Negeri Maulana Malik Ibrahim</h3>
+                            <div class="meta">Teknik Informatika • Aug 2018 - Feb 2022</div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>Honors &amp; Awards</h3>
+                            <div class="meta">Top 6 Duta Pangan 2018 Kota Malang • Winner 1 Summer Program UIN Malang 2019 • Mahasiswa Teladan PKPBA Semester 1 2018</div>
+                        </div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Project Management Body of Knowledge (PMBOK)</span>
+                        <span class="tag">Software System Analysis</span>
+                    </div>
+                </section>
+            </div>
+        </section>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -408,11 +294,10 @@
             offset: 100
         });
 
-        // Update time
         function updateTime() {
             const now = new Date();
             const timeElement = document.querySelector('.nav-time');
-            timeElement.textContent = now.toLocaleTimeString('en-US', { 
+            timeElement.textContent = now.toLocaleTimeString('en-US', {
                 hour12: false,
                 hour: '2-digit',
                 minute: '2-digit',
